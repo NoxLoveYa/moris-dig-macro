@@ -1161,6 +1161,10 @@ F3:: {
     }
 }
 
+F4:: {
+    Run 'python screenshot.py ' webhookURL, , "Hide"
+}
+
 ScanForColor() {
     global scanLeft, scanTop, scanRight, scanBottom, targetColor, scanning
     global clickColors, clickColorVariation, clickScanRadius
@@ -1269,6 +1273,7 @@ CheckPixelTimeout() {
         if (pixelFoundAfterRecovery || lastRecoveryTime = 0 || timeSinceLastRecovery > 10000) {
             successfulCycles++
             pixelFoundAfterRecovery := false
+            Send("{F4}")
         } else {
             unsuccessfulCycles++
         }
